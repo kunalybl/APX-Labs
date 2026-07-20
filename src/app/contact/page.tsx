@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CalendarCheck, Clock, MessageSquare, ShieldCheck } from "lucide-react";
+import { CalendarCheck, Clock, Mail, MessageSquare, Phone, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { CalendlyEmbed } from "@/components/calendly-embed";
@@ -53,9 +53,25 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="mt-10 flex items-center gap-2 text-sm text-fg-subtle">
-              <Clock className="h-4 w-4" />
-              Typically responds within one business day · {site.email}
+            <div className="mt-10 flex flex-col gap-3 text-sm">
+              <a
+                href={`mailto:${site.email}`}
+                className="flex items-center gap-2 text-fg-muted transition-colors hover:text-fg"
+              >
+                <Mail className="h-4 w-4 text-accent" />
+                {site.email}
+              </a>
+              <a
+                href={`tel:${site.phoneHref}`}
+                className="flex items-center gap-2 text-fg-muted transition-colors hover:text-fg"
+              >
+                <Phone className="h-4 w-4 text-accent" />
+                {site.phone}
+              </a>
+              <span className="flex items-center gap-2 text-fg-subtle">
+                <Clock className="h-4 w-4" />
+                Typically responds within one business day
+              </span>
             </div>
           </Reveal>
 

@@ -6,6 +6,8 @@ export const site = {
     "APX Labs builds AI-powered customer acquisition systems that generate qualified meetings and predictable sales pipeline for local and commercial service businesses.",
   url: "https://apx-ai.co",
   email: "kunal@apx-ai.co",
+  phone: "+1 (917) 718-4299",
+  phoneHref: "+19177184299",
   // Calendly base link + theme params so the widget blends with the dark UI.
   calendly:
     "https://calendly.com/kunalybl/30min?hide_gdpr_banner=1&background_color=0b0e13&text_color=f2f4f7&primary_color=4d8ef8",
