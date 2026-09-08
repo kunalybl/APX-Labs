@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated="July 19, 2026">
+    <LegalLayout title="Privacy Policy" updated="September 8, 2026">
       <p>
         This Privacy Policy explains how {site.legalName} (&quot;APX Labs&quot;,
         &quot;we&quot;, &quot;us&quot;) collects, uses and safeguards information when you
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <LegalSection heading="1. Information we collect">
         <p>We collect information you provide directly and information gathered automatically:</p>
         <ul>
-          <li><strong>Contact details</strong> — name, email, company and message when you request a strategy call.</li>
+          <li><strong>Contact details</strong> — name, email, phone number, company and message when you request a strategy call or opt in to SMS.</li>
           <li><strong>Usage data</strong> — pages visited, referring source and device information collected via standard analytics.</li>
           <li><strong>Service data</strong> — information required to deliver our services under a signed agreement.</li>
         </ul>
@@ -40,6 +40,11 @@ export default function PrivacyPage() {
           We do not sell your personal information. We share data only with trusted service
           providers (such as hosting, analytics and CRM platforms) who process it on our
           behalf under confidentiality obligations, or where required by law.
+        </p>
+        <p>
+          <strong>SMS &amp; mobile opt-in data:</strong> Mobile information and SMS/text-messaging
+          opt-in consent are never shared with third parties or affiliates, and are never sold or
+          used for marketing or promotional purposes by anyone other than {site.legalName}.
         </p>
       </LegalSection>
 
