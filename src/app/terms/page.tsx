@@ -1,81 +1,123 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LegalLayout, LegalSection } from "@/components/legal-layout";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "The terms governing your use of the APX Labs website and services.",
+  title: "Terms & Conditions",
+  description: "The terms and conditions governing your use of the APX Labs website and services.",
 };
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" updated="July 19, 2026">
+    <LegalLayout title="Terms & Conditions" updated="September 8, 2026">
       <p>
-        These Terms of Service (&quot;Terms&quot;) govern your access to and use of the{" "}
-        {site.legalName} website and services. By using our website or engaging our services,
-        you agree to these Terms.
+        Welcome to {site.legalName}. By accessing or using our website and services, you
+        agree to the following terms.
       </p>
 
-      <LegalSection heading="1. Services">
+      <LegalSection heading="1. Use of Services">
         <p>
-          APX Labs provides growth infrastructure and marketing services, which may include
-          prospect research, outreach, email infrastructure, landing pages, CRM automation,
-          follow-up systems and analytics. The specific scope of any engagement is defined in a
-          separate written agreement or proposal.
+          You agree to use our services only for lawful purposes. You must not misuse,
+          disrupt, or attempt to gain unauthorized access to our systems or services.
         </p>
       </LegalSection>
 
-      <LegalSection heading="2. Engagement & payment">
+      <LegalSection heading="2. Services Provided">
         <p>
-          Fees, billing cycles and deliverables are set out in your service agreement. Unless
-          otherwise stated, fees are due as invoiced. Late payments may result in suspension of
-          services.
+          {site.legalName} provides marketing, lead generation, and automation services. We do
+          not guarantee specific results, including but not limited to the number of leads,
+          appointments, or revenue outcomes.
         </p>
       </LegalSection>
 
-      <LegalSection heading="3. Client responsibilities">
+      <LegalSection heading="3. Payments">
+        <p>
+          All payments are final unless otherwise stated in a written agreement. Failure to
+          complete payment may result in suspension or termination of services.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="4. Communication Consent">
+        <p>
+          By providing your contact information, you consent to receive communications from us
+          via email, phone, and SMS. You can opt out of SMS communications at any time by
+          following the instructions provided in the message.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="5. Intellectual Property">
+        <p>
+          All content, branding, materials, and systems provided by {site.legalName} remain the
+          intellectual property of {site.legalName} unless otherwise agreed in writing.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="6. Limitation of Liability">
+        <p>
+          {site.legalName} is not liable for any indirect, incidental, or consequential damages
+          arising from the use or inability to use our services.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="7. Termination">
+        <p>
+          We reserve the right to suspend or terminate services at any time if these terms are
+          violated.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="8. Updates to Terms">
+        <p>
+          We may update these Terms and Conditions from time to time. Continued use of our
+          services constitutes acceptance of the updated terms.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="9. SMS Terms of Service">
+        <p>
+          <strong>Program Name:</strong> {site.legalName} Messaging Program
+        </p>
+        <p>
+          <strong>Program Description:</strong> By opting in, you agree to receive SMS messages
+          from {site.legalName} related to service updates, appointment and strategy-call
+          reminders, follow-ups, and promotional communications.
+        </p>
+        <p>
+          You can cancel the SMS service at any time. Simply text &quot;STOP&quot; to the number
+          you received messages from. Upon sending &quot;STOP,&quot; we will confirm your
+          unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS
+          messages from us. To rejoin, sign up as you did initially, and we will resume sending
+          SMS messages to you.
+        </p>
+        <p>
+          For help, text &quot;HELP&quot; to the number you received messages from, or contact us
+          at <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+        <p>Carriers are not liable for delayed or undelivered messages.</p>
+        <p>
+          As always, message and data rates may apply for messages sent to you from us and to us
+          from you. Message frequency varies. For questions about your text plan or data plan,
+          contact your wireless provider.
+        </p>
+        <p>
+          For privacy-related inquiries, please refer to our{" "}
+          <Link href="/privacy">Privacy Policy</Link>.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="10. Contact Information">
+        <p>
+          If you have any questions regarding these Terms and Conditions, please contact us at:
+        </p>
         <ul>
-          <li>Provide accurate information and timely feedback needed to deliver services.</li>
-          <li>Ensure your offers, claims and outreach comply with applicable laws and regulations.</li>
-          <li>Maintain ownership and appropriate use of any domains, inboxes and data used in your campaigns.</li>
+          <li>
+            Email: <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+          <li>
+            Phone: <a href={`tel:${site.phoneHref}`}>{site.phone}</a>
+          </li>
         </ul>
-      </LegalSection>
-
-      <LegalSection heading="4. No guarantee of results">
-        <p>
-          We apply proven systems and best practices, but outcomes depend on factors outside our
-          control — including your market, offer, pricing and sales execution. We do not guarantee
-          specific results, revenue or number of meetings.
-        </p>
-      </LegalSection>
-
-      <LegalSection heading="5. Intellectual property">
-        <p>
-          Deliverables created specifically for you under a paid engagement are yours upon full
-          payment. Underlying methods, tools, templates and know-how remain the property of APX Labs.
-        </p>
-      </LegalSection>
-
-      <LegalSection heading="6. Confidentiality">
-        <p>
-          Each party agrees to protect the other&apos;s confidential information and use it only for
-          the purpose of the engagement.
-        </p>
-      </LegalSection>
-
-      <LegalSection heading="7. Limitation of liability">
-        <p>
-          To the maximum extent permitted by law, APX Labs is not liable for indirect, incidental or
-          consequential damages. Our total liability for any claim is limited to the fees paid for the
-          services giving rise to the claim.
-        </p>
-      </LegalSection>
-
-      <LegalSection heading="8. Contact">
-        <p>
-          Questions about these Terms can be sent to{" "}
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
-        </p>
       </LegalSection>
     </LegalLayout>
   );
