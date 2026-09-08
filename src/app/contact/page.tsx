@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { CalendarCheck, Clock, Mail, MessageSquare, Phone, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { CalendlyEmbed } from "@/components/calendly-embed";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Book a Strategy Call",
+  title: "Contact Us",
   description:
-    "Book a strategy call with APX Labs and see exactly how our growth infrastructure would generate qualified meetings for your business.",
+    "Get in touch with APX Labs to see how our growth infrastructure would generate qualified meetings for your business.",
 };
 
 const points = [
@@ -24,63 +23,69 @@ export default function ContactPage() {
         <div className="absolute inset-x-0 top-0 h-[400px] ambient-glow opacity-70" />
         <div className="absolute inset-0 bg-grid" />
       </div>
-      <Container>
-        <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-          <Reveal>
-            <span className="eyebrow mb-5">
-              <span className="h-1 w-1 rounded-full bg-accent" />
-              Strategy call
+      <Container className="max-w-3xl">
+        <Reveal className="text-center">
+          <span className="eyebrow mx-auto mb-5 justify-center">
+            <span className="h-1 w-1 rounded-full bg-accent" />
+            Contact
+          </span>
+          <h1 className="text-display-lg text-balance text-fg">Let&apos;s map your pipeline.</h1>
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-fg-muted">
+            Reach out and we&apos;ll show you precisely how the APX Growth Engine would
+            generate qualified meetings for your business.
+          </p>
+        </Reveal>
+
+        {/* Email + phone — the focal point */}
+        <Reveal delay={1} className="mx-auto mt-12 grid max-w-xl gap-4 sm:grid-cols-2">
+          <a
+            href={`mailto:${site.email}`}
+            className="group flex flex-col gap-4 rounded-3xl border border-line bg-bg-elevated p-7 transition-all duration-300 ease-expo hover:-translate-y-1 hover:border-line-strong hover:shadow-lift"
+          >
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-line bg-bg-subtle text-accent transition-colors group-hover:border-accent/40 group-hover:bg-accent-soft">
+              <Mail className="h-6 w-6" strokeWidth={1.75} />
             </span>
-            <h1 className="text-display-lg text-balance text-fg">
-              Let&apos;s map your pipeline.
-            </h1>
-            <p className="mt-5 max-w-md text-lg leading-relaxed text-fg-muted">
-              Tell us about your business and goals. We&apos;ll show you precisely how
-              the APX Growth Engine would generate qualified meetings for you.
-            </p>
+            <span>
+              <span className="block text-sm text-fg-subtle">Email us</span>
+              <span className="mt-0.5 block break-all text-lg font-semibold text-fg">{site.email}</span>
+            </span>
+          </a>
 
-            <div className="mt-10 flex flex-col gap-6">
-              {points.map((p) => (
-                <div key={p.title} className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-bg-elevated text-accent">
-                    <p.icon className="h-5 w-5" strokeWidth={1.75} />
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-fg">{p.title}</h3>
-                    <p className="mt-0.5 text-sm text-fg-muted">{p.body}</p>
-                  </div>
+          <a
+            href={`tel:${site.phoneHref}`}
+            className="group flex flex-col gap-4 rounded-3xl border border-line bg-bg-elevated p-7 transition-all duration-300 ease-expo hover:-translate-y-1 hover:border-line-strong hover:shadow-lift"
+          >
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-line bg-bg-subtle text-accent transition-colors group-hover:border-accent/40 group-hover:bg-accent-soft">
+              <Phone className="h-6 w-6" strokeWidth={1.75} />
+            </span>
+            <span>
+              <span className="block text-sm text-fg-subtle">Call or text</span>
+              <span className="mt-0.5 block text-lg font-semibold text-fg">{site.phone}</span>
+            </span>
+          </a>
+        </Reveal>
+
+        <Reveal delay={2} className="mt-6 flex items-center justify-center gap-2 text-sm text-fg-subtle">
+          <Clock className="h-4 w-4" />
+          Typically responds within one business day
+        </Reveal>
+
+        {/* What to expect */}
+        <Reveal delay={2} className="mt-16 border-t border-line pt-14">
+          <div className="grid gap-8 sm:grid-cols-3">
+            {points.map((p) => (
+              <div key={p.title} className="flex flex-col gap-3 text-center sm:text-left">
+                <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-bg-elevated text-accent sm:mx-0">
+                  <p.icon className="h-5 w-5" strokeWidth={1.75} />
+                </span>
+                <div>
+                  <h3 className="font-semibold text-fg">{p.title}</h3>
+                  <p className="mt-1 text-sm text-fg-muted">{p.body}</p>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-10 flex flex-col gap-3 text-sm">
-              <a
-                href={`mailto:${site.email}`}
-                className="flex items-center gap-2 text-fg-muted transition-colors hover:text-fg"
-              >
-                <Mail className="h-4 w-4 text-accent" />
-                {site.email}
-              </a>
-              <a
-                href={`tel:${site.phoneHref}`}
-                className="flex items-center gap-2 text-fg-muted transition-colors hover:text-fg"
-              >
-                <Phone className="h-4 w-4 text-accent" />
-                {site.phone}
-              </a>
-              <span className="flex items-center gap-2 text-fg-subtle">
-                <Clock className="h-4 w-4" />
-                Typically responds within one business day
-              </span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={1}>
-            <div className="overflow-hidden rounded-3xl border border-line bg-bg-elevated p-1.5 shadow-card">
-              <CalendlyEmbed url={site.calendly} height={760} className="overflow-hidden rounded-[1.35rem]" />
-            </div>
-          </Reveal>
-        </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );
